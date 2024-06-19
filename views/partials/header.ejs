@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://i.pinimg.com/originals/7a/46/b0/7a46b00f44d4797fc587f6efe6b8a1b2.png" type="image/x-icon">
+  <title>PicQuest</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <% if(nav ===true){%>
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div class="text-2xl font-bold text-red-500">PicQuest</div>
+          <nav class="space-x-4">
+              <a href="/profile" class="text-gray-700 font-bold hover:text-gray-900">Profile</a>
+              <a href="#" class="text-gray-700 font-bold hover:text-gray-900">Feed</a>
+              <a href="/logout" class="bg-red-500 text-white font-bold py-2 px-4 rounded-xl hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">Logout</a>
+          </nav>
+      </div>
+    </header>
+  <% } %>

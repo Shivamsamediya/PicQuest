@@ -1,0 +1,42 @@
+<% include ./partials/header.ejs %>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <section class="container mx-auto px-4 py-8 flex-grow">
+        <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-[500px] mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800 text-center">Create a New Post</h2>
+            <form action="/createpost" method="post" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <label for="title" class="block text-gray-700 font-semibold mb-2">Title</label>
+                    <input type="text" id="title" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter the title of your post" name="title">
+                </div>
+                <div class="mb-4">
+                    <label for="description" class="block text-gray-700 font-semibold mb-2">Description</label>
+                    <textarea id="description" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter a description for your post" name="description"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="image" class="block text-gray-700 font-semibold mb-2">Image</label>
+                    <div class="flex items-center w-full">
+                        <label for="image" class="bg-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">Choose File</label>
+                        <span id="file-name" class="ml-14 text-gray-600">No file chosen</span>
+                        <input type="file" id="image" class="hidden" name="postimage">
+                    </div>
+                </div>
+                <button type="submit" class="bg-red-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 w-32 mx-auto block">Post</button>            
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-white shadow-md mt-20">
+        <div class="container mx-auto px-4 py-4 text-center text-gray-600">
+            &copy; 2024 PicQuest. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('image').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+            document.getElementById('file-name').textContent = fileName;
+        });
+    </script>
+</body>
+<% include ./partials/footer.ejs %>
